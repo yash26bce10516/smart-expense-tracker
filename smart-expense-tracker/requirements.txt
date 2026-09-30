@@ -1,5 +1,0 @@
-# The application uses only the Python standard library (Python 3.9+).
-# No third-party packages are required to run or test it.
-#
-# Optional - only needed to regenerate the screenshots/sequence diagram in docs/:
-# matplotlib
