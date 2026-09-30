@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[user]
+	name = Yash Tripathi
+	email = yash26bce10516@users.noreply.github.com
