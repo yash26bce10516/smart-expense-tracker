@@ -1,1 +1,14 @@
-5226c1c65355a59aa0fd0b0b98e27fdb91c5f32f
+0000000000000000000000000000000000000000 dbf13fa1e477b38d325583762ca7ff03b71b8850 Student <student@example.com> 1790764270 +0000	commit (initial): Initial project skeleton: config, models, exceptions, logging
+dbf13fa1e477b38d325583762ca7ff03b71b8850 f328652fe9f6af12ae801367514b59a7e59fbad2 Student <student@example.com> 1790764270 +0000	commit: Add input validators and SQLite data layer
+f328652fe9f6af12ae801367514b59a7e59fbad2 44624c9e49cd26e101ce8849a225ea1b95a729a8 Student <student@example.com> 1790764270 +0000	commit: Add user registration/login with salted PBKDF2 hashing
+44624c9e49cd26e101ce8849a225ea1b95a729a8 60865eca8d6a5ab876935c0076cdafa66db91881 Student <student@example.com> 1790764270 +0000	commit: Add expense CRUD service with per-user scoping
+60865eca8d6a5ab876935c0076cdafa66db91881 e9c25c548329cfe6ae817bc99be3324d96b4e9d1 Student <student@example.com> 1790764270 +0000	commit: Add budgets with WARNING/EXCEEDED alert levels
+e9c25c548329cfe6ae817bc99be3324d96b4e9d1 375acaed0ed1900f89544ddba4d064330228d108 Student <student@example.com> 1790764270 +0000	commit: Add analytics (summary, breakdown, trend, forecast) and CSV import/export
+375acaed0ed1900f89544ddba4d064330228d108 388dcbbacbde1e44b5f9ad97a2e18bfb04c48b7b Student <student@example.com> 1790764270 +0000	commit: Add menu-driven CLI and main entry point
+388dcbbacbde1e44b5f9ad97a2e18bfb04c48b7b 45e8e2cf65c671c31837507633f0e18b2817ec33 Student <student@example.com> 1790764270 +0000	commit: Add unit and end-to-end tests (37 tests)
+45e8e2cf65c671c31837507633f0e18b2817ec33 5c0ead37565d35d52b62f0a5612cfcd7421d9757 Student <student@example.com> 1790764270 +0000	commit: Add design diagrams (architecture, workflow, use case, sequence, class, ER) and screenshots
+5c0ead37565d35d52b62f0a5612cfcd7421d9757 25727973e83e84763462582e42984850605f80e8 Student <student@example.com> 1790764271 +0000	commit: Add README.md and statement.md
+25727973e83e84763462582e42984850605f80e8 2eabae1a0a6687cab03918cc491339d3e9d20292 Student <student@example.com> 1790764271 +0000	commit: Add project report generator and PDF report
+2eabae1a0a6687cab03918cc491339d3e9d20292 f957dc0b976bd509f1c10e9fefca9a3d93af7067 Student <student@example.com> 1790780257 +0000	commit: Expand README with step-by-step setup and troubleshooting
+f957dc0b976bd509f1c10e9fefca9a3d93af7067 70eb1cccfc4d43d6eb34f913a206ba24e7037fbc Yash Tripathi <yash26bce10516@users.noreply.github.com> 1790783540 +0000	commit: Add student details to report and README
+70eb1cccfc4d43d6eb34f913a206ba24e7037fbc 5226c1c65355a59aa0fd0b0b98e27fdb91c5f32f Yash Tripathi <yash26bce10516@users.noreply.github.com> 1790783540 +0000	filter-branch: rewrite
