@@ -1,6 +1,0 @@
-__pycache__/
-*.pyc
-data/*.db
-data/*.log*
-*_export.csv
-.venv/
