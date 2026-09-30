@@ -1,0 +1,31 @@
+digraph W {
+  rankdir=TB; fontname="Helvetica"; nodesep=0.4; ranksep=0.4;
+  node [fontname="Helvetica", fontsize=11, style=filled, fillcolor="#FFFFFF"];
+  edge [fontname="Helvetica", fontsize=10];
+  start [label="Start", shape=oval, fillcolor="#CDEBC5"];
+  auth [label="Auth menu\n1 Login | 2 Register | 0 Exit", shape=box];
+  cred [label="Enter credentials", shape=parallelogram];
+  ok [label="Valid?", shape=diamond, fillcolor="#FFF2B3"];
+  err1 [label="Show friendly error", shape=box, fillcolor="#F8C9C4"];
+  menu [label="Main menu (10 options)", shape=box, fillcolor="#D6E6F7"];
+  choice [label="Choice?", shape=diamond, fillcolor="#FFF2B3"];
+  m1 [label="Expense CRUD\n(add / view / edit / delete)", shape=box];
+  m2 [label="Budgets\n(set / status / alerts)", shape=box];
+  m3 [label="Analytics\n(report / trend / forecast)", shape=box];
+  m4 [label="CSV export / import", shape=box];
+  valid [label="Validate input\n(amount, date, category)", shape=box];
+  vok [label="Input valid?", shape=diamond, fillcolor="#FFF2B3"];
+  err2 [label="Show error message,\nreturn to menu", shape=box, fillcolor="#F8C9C4"];
+  db [label="Read / write SQLite\n(transaction)", shape=box, fillcolor="#E5D5F0"];
+  out [label="Display result\n(+ budget alert if any)", shape=parallelogram];
+  logout [label="Logout", shape=box];
+  end [label="End", shape=oval, fillcolor="#F4C7C3"];
+
+  start -> auth; auth -> cred [label="1 / 2"]; auth -> end [label="0"];
+  cred -> ok; ok -> err1 [label="No"]; err1 -> auth; ok -> menu [label="Yes"];
+  menu -> choice; choice -> m1; choice -> m2; choice -> m3; choice -> m4;
+  choice -> logout [label="0"]; logout -> auth;
+  m1 -> valid; m2 -> valid; m3 -> valid; m4 -> valid;
+  valid -> vok; vok -> err2 [label="No"]; err2 -> menu; vok -> db [label="Yes"];
+  db -> out; out -> menu;
+}

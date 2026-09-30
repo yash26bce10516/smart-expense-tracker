@@ -1,0 +1,29 @@
+digraph G {
+  rankdir=TB; nodesep=0.5; ranksep=0.6; fontname="Helvetica";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=12, margin="0.2,0.12"];
+  edge [fontname="Helvetica", fontsize=10];
+
+  subgraph cluster_pres { label="Presentation Layer"; style="rounded,filled"; fillcolor="#EAF2FB"; color="#7FA7D9";
+    cli [label="cli.py\nMenu-driven CLI (App)", fillcolor="#FFFFFF"];
+    main [label="main.py\nEntry point", fillcolor="#FFFFFF"]; }
+  subgraph cluster_biz { label="Business Logic Layer"; style="rounded,filled"; fillcolor="#EAF7EA"; color="#7DBB7D";
+    auth [label="auth.py\nAuthService", fillcolor="#FFFFFF"];
+    exp [label="expense_service.py\nExpenseService (CRUD)", fillcolor="#FFFFFF"];
+    bud [label="budget_service.py\nBudgetService (alerts)", fillcolor="#FFFFFF"];
+    ana [label="analytics.py\nAnalytics (reports, forecast)", fillcolor="#FFFFFF"];
+    exf [label="exporter.py\nCSV export / import", fillcolor="#FFFFFF"]; }
+  subgraph cluster_cross { label="Cross-cutting"; style="rounded,filled"; fillcolor="#FFF6E5"; color="#E0B458";
+    val [label="validators.py\nInput validation", fillcolor="#FFFFFF"];
+    exc [label="exceptions.py\nError hierarchy", fillcolor="#FFFFFF"];
+    log [label="logger_setup.py\nRotating log file", fillcolor="#FFFFFF"];
+    cfg [label="config.py\nSettings", fillcolor="#FFFFFF"]; }
+  subgraph cluster_data { label="Data Layer"; style="rounded,filled"; fillcolor="#F5EAF7"; color="#B07CC0";
+    db [label="database.py\nDatabase (sessions, schema)", fillcolor="#FFFFFF"];
+    sqlite [label="SQLite file\nusers | expenses | budgets", shape=cylinder, fillcolor="#FFFFFF"]; }
+
+  main -> cli; cli -> auth; cli -> exp; cli -> bud; cli -> ana; cli -> exf;
+  exf -> exp [label="uses"];
+  auth -> db; exp -> db; bud -> db; ana -> db; db -> sqlite;
+  exp -> val [style=dashed]; bud -> val [style=dashed]; auth -> val [style=dashed]; ana -> val [style=dashed];
+  cli -> exc [style=dashed, label="catches"]; db -> log [style=dashed];
+}

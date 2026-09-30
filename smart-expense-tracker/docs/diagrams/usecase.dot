@@ -1,0 +1,18 @@
+digraph U {
+  rankdir=LR; fontname="Helvetica"; nodesep=0.25; ranksep=1.4;
+  node [fontname="Helvetica", fontsize=11];
+  user [label="User", shape=box, style="filled", fillcolor="#FDEBC8", height=0.9, width=0.9];
+  subgraph cluster_sys { label="Smart Expense Tracker"; style="rounded"; color="#555555";
+    node [shape=ellipse, style=filled, fillcolor="#E4EEF9"];
+    u1 [label="Register / Login"]; u2 [label="Add expense"]; u3 [label="View / search expenses"];
+    u4 [label="Edit expense"]; u5 [label="Delete expense"]; u6 [label="Set category budget"];
+    u7 [label="View budget status & alerts"]; u8 [label="Monthly report"];
+    u9 [label="Trend & month-end forecast"]; u10 [label="Export CSV"]; u11 [label="Import CSV"];
+    u12 [label="Validate input", fillcolor="#EEEEEE"]; }
+  user -> u1; user -> u2; user -> u3; user -> u4; user -> u5; user -> u6;
+  user -> u7; user -> u8; user -> u9; user -> u10; user -> u11;
+  u2 -> u12 [style=dashed, label="<<include>>", fontsize=9];
+  u4 -> u12 [style=dashed, label="<<include>>", fontsize=9];
+  u11 -> u12 [style=dashed, label="<<include>>", fontsize=9];
+  u2 -> u7 [style=dashed, label="<<extend>>\n(if >= 80%)", fontsize=9, dir=back];
+}
